@@ -100,6 +100,13 @@ INSERT INTO visit (pet_id, owner_id, visit_date, procedure) VALUES (
         '05 - EAR INFECTION');
 
 --PART 2
+--Assumptions:
+--      No longer assuming a procedure list, as in part 1
+--      Invoices are not necessarily issued on the date of a given visit
+--      Default tax rate is 8%, but it isn't set in stone.
+--Notes:
+--      Invoices keep separate track of totals/post-tax totals so that reports needing them (but not caring about
+--      line items) can get away with only accessing one table.
 
 BEGIN TRANSACTION;
 
